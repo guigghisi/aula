@@ -11,7 +11,7 @@ id serial primary key,
 		on update cascade
 );
 
-insert into marca values (default,'Padrão')
+insert into marca values (default,'Padrão');
 insert into marca values(default,'VW');
 insert into marca values(default,'FIAT');
 
