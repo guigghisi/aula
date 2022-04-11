@@ -6,7 +6,7 @@ id serial primary key,
 create table modelo(
 id serial primary key,
 	nome varchar(100) not null unique,
-	marca_id int references marca(id) default 1
+	marca_id int default 1 references marca(id)
 		on delete restrict
 		on update cascade
 );
