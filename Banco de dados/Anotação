@@ -1,0 +1,17 @@
+drop table modelo,marca;
+create table marca(
+id serial primary key,
+	nome varchar(100) not null unique
+);
+create table modelo(
+id serial primary key,
+	nome varchar(100) not null unique,
+	marca_id int references marca(id) 
+);
+
+insert into marca values(default,'VW');
+insert into marca values(default,'FIAT');
+
+
+insert into modelo values(default,'Uno',2);
+select * from modelo;
