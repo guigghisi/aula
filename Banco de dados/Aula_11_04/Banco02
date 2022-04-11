@@ -15,10 +15,22 @@ create table curso_disciplina(
     curso_id int not null,
     disciplina_id int not null,
     primary key(curso_id,disciplina_id),
-    foreign key(curso_id)not null references curso(id)
+    foreign key(curso_id) references curso(id)
         on delete restrict
         on update cascade,
-    foreign key(disciplina_id)not null references disciplina(id)
+    foreign key(disciplina_id) references disciplina(id)
         on delete restrict
         on update cascade
 );
+
+insert into curso values (default,'Análise e Desenvolvimento de Sistemas',2000)returning id;
+insert into curso values (default,'Sistemas de Informação',2000)returning id;
+
+insert into disciplina values (default,'Programação',100,1)returning id;
+insert into disciplina values (default,'Banco de Dados',100,2)returning id;
+
+insert into curso_disciplina values (1,1);
+insert into curso_disciplina values (1,2);
+insert into curso_disciplina values (2,1);
+
+select * from curso_disciplina;
