@@ -1,4 +1,4 @@
-/* drop table disciplina,curso; */
+drop table disciplina,curso,curso_disciplina; 
 create table curso(
     id serial primary key,
     nome varchar(100) not null unique,
