@@ -1,0 +1,16 @@
+create table curso(
+    id serial primary key,
+    nome varchar(100) not null unique,
+    ch int not null default 0
+)
+
+select * from curso;
+
+alter table curso drop ch;
+
+alter table curso add ch int not null default 1;
+
+update curso set ch=2000 where id=1;
+
+select * from curso;
+
