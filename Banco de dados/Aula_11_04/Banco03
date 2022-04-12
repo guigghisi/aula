@@ -8,9 +8,13 @@ select * from curso;
 
 alter table curso drop ch;
 
-alter table curso add ch int not null default 1;
+alter table curso add ch null default 0;
+
+alter table curso alter ch set default 1;
 
 update curso set ch=2000 where id=1;
 
 select * from curso;
+
+select * from curso where ch is null;
 
