@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-/* #include <../lib_ponto/lib_ponto.h> */
+#include <../lib_ponto/lib_ponto.h>
 
 int main(){
     printf("Hello World\n");
-    /* PONTO *p;
+    PONTO *p;
     PONTO *q;
     float *x1, *y1;
     float *x2, *y2;
@@ -17,5 +17,5 @@ int main(){
     printf("A distancia entre os pontos e: %.2f\n", d);
     pto_libera(p);
     pto_libera(q);
-    return 0; */
+    return 0;
 }
