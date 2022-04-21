@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1650498899 source:c:\users\guilh\documents\ifsc\estrutura de dados\aula04\lib_vetor_din\main.c
+	"lib_vetor_din.h"
+
+1650498165 c:\users\guilh\documents\ifsc\estrutura de dados\aula04\lib_vetor_din\lib_vetor_din.h
+	<stdio.h>
+	<stdlib.h>
+

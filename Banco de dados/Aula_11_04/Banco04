@@ -1,0 +1,32 @@
+create table cliente(
+id serial primary key,
+nome_cliente varchar(50)
+);
+
+create table pedido(
+cliente_id varchar(50) not null,
+NumeroPedido int,
+primary key(cliente_id,NumeroPedido),
+data_pedido int,
+foreign key(cliente_id) references cliente(nome_cliente)
+);
+
+create table produto(
+id serial primary key,
+nome_produto varchar(50) not null,
+preco_produto float
+);
+
+create table produto_pedido(
+    pedido_id int not null,
+    produto_id int not null,
+quantidadeproduto int,
+primary key(pedido_id,produto_id),
+foreign key(produto_id) references produto(NumeroPedido)
+on delete restrict
+on update cascade,
+foreign key(pedido_id) references pedido(NumeroPedido)
+on delete restrict
+on update cascade
+)
+

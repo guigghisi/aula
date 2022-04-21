@@ -3,10 +3,11 @@
 #include <math.h>
 #include "lib_ponto.h"
 
-struct ponto {
-    float x;
-    float y;
-};
+ typedef struct
+{
+    float x1;
+    float x2;
+} PONTO;
 
 PONTO * pto_cria(float x, float y){
     PONTO * p = (PONTO *) malloc(sizeof(PONTO));

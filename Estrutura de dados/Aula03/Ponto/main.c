@@ -13,6 +13,7 @@ int main(){
     float d = pto_distancia(p,q);
     pto_acessa(p,x1,y1);
     pto_acessa(q,x2,y2);
+    printf("O ponto 1 esta na posicao (%.2f, %.2f)\n", *x1, *y1);
     printf("distancia entre os pontos: %.2f\n",d);
     pto_libera(p);
     pto_libera(q);
