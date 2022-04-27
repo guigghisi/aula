@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1651103409 source:c:\users\guilh\documents\ifsc\estrutura de dados\aula_27_04\lista\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../lib_lista_encadeada/lib_lista_encadeada.h"
+
+1651101202 c:\users\guilh\documents\ifsc\estrutura de dados\aula_27_04\lib_lista_encadeada\lib_lista_encadeada.h
+	<stdlib.h>
+
