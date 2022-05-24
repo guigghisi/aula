@@ -1,0 +1,52 @@
+drop table categoria;
+drop table conta;
+
+create table conta(
+    id serial primary key,
+    valor real not null,
+    data_vencimento date not null,
+    descricao varchar(100) not null,
+    categoria_id integer not null references categoria(id)
+);
+create table recebimento
+create table pagamento(
+    contaPagar_id integer references conta(id),
+)
+create table contaPagar(
+    conta_id integer  references conta(id)
+    primary key(conta_id)
+);
+create table contaReceber(
+    conta_id integer references conta(id)
+    primary key(conta_id)
+);
+create table categoria();
+    id serial primary key,
+    nome varchar(100) not null unique
+);
+
+-- Listar todas as contas a pagas
+-- Listar todas as contas a receber
+
+-- Listar todas as contas pagas
+
+-- Listar todas as contas recebidas
+
+-- Valor total das contas a receber por categoria
+
+-- Valor total das contas a pagar por categoria
+
+-- Quantidade de contas a pagar vencidas
+
+-- Quantidade de contas a receber vencidas
+
+-- Quantidade de contas e valor total a receber este mês
+
+-- Contas a pagar hoje
+
+-- Quantidade de contas a pagar hoje
+
+-- Contas a receber entre datas
+
+-- Contas pagas entre datas
+

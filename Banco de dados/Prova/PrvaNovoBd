@@ -1,0 +1,20 @@
+create table Produto(
+    id serial,
+    nome text not null,
+    descricao text not null,
+    preco real not null,
+    dataValidade date not null,
+    categoria text not null,
+	primary key (id)
+);
+insert INTO Produto(nome, descricao, preco, dataValidade, categoria) VALUES
+('Produto 1', 'Descrição 1', 10.00, '2019-01-01', 'Eletrônicos'),
+('Produto 2', 'Descrição 2', 20.00, '2022-05-16', 'Cosmetico'),
+('Produto 3', 'Descrição 3', 30.00, '2022-05-16', 'Eletrônicos'),
+('Produto 4', 'Descrição 4', 40.00, '2019-01-01', 'Eletrônicos')
+;
+
+--quantidade de produtos que possuem preço abaixo da média de preços de todos os produtos da categoria Eletrônicos.
+select count(*) from Produto where categoria = 'Eletrônicos' and preco < (select avg(preco) from Produto where categoria = 'Eletrônicos');
+--listagem dos produtos que possuem data de validade esta semana.
+select * from Produto where dataValidade between now() and now() + interval '7 days';

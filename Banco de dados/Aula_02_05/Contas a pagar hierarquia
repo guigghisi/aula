@@ -1,0 +1,74 @@
+drop table categoria;
+drop table conta;
+
+create table conta(
+    id serial primary key,
+    valor real not null,
+    data_vencimento date not null,
+    data_pagamento date null,
+    data_registro timestamp default now() not null,
+    descricao varchar(100) not null,
+    categoria_id integer not null references categoria(id)
+);
+
+create table categoria(
+    id serial primary key,
+    nome varchar(100) not null unique
+);
+
+
+alter table conta add tipo char(1) default '1';
+insert into categoria (nome) values('Lazer'),('Fixa');
+
+insert into conta (descricao, valor, data_vencimento,categoria_id,tipo) 
+    values ('agua', 100, '20/05/2020',2,1);
+insert into conta (descricao, valor, data_vencimento,categoria_id,tipo)
+    values ('aluguel', 100, '20/05/2020',2,2);
+    
+
+update conta set data_pagamento =current_date where id = 1;
+update conta set data_pagamento =current_date where id = 2 and data_pagamento is null;
+-- Listar todas as contas a pagas
+select * from conta where tipo = '1' and data_pagamento is null;
+-- Listar todas as contas a 
+select * from conta where tipo = '2' and data_pagamento is null;
+-- Listar todas as contas pagas
+select * from conta where tipo = '1' and data_pagamento is not null;
+-- Listar todas as contas recebidas
+select * from conta where tipo = '2' and data_pagamento is not null;
+-- Valor total das contas a receber por categoria
+select categoria.nome, sum(conta.valor) from categoria, conta
+    where conta.categoria_id = categoria.id
+        and tipo = '2' and data_pagamento is null group by categoria.nome;
+-- Valor total das contas a pagar por categoria
+select categoria.nome, sum(conta.valor) from categoria, conta
+    where conta.categoria_id = categoria.id
+        and tipo = '1' and data_pagamento is null group by categoria.nome;
+-- Quantidade de contas a pagar vencidas
+select count(*) from conta where tipo = '1' and data_pagamento is null 
+    and data_vencimento < current_date and data_pagamento is null;
+-- Quantidade de contas a receber vencidas
+select count(*) from conta where tipo = '2' and data_pagamento is null 
+    and data_vencimento < current_date and data_pagamento is null;
+-- Quantidade de contas e valor total a receber este mês
+select count(*), sum(conta.valor) from conta where tipo = '2' and data_pagamento is null 
+    and extract(month from data_vencimento) = extract(month from current_date);
+-- Contas a pagar hoje
+select * from conta where tipo = '1' and data_pagamento is null 
+    and data_vencimento = current_date;
+-- Quantidade de contas a pagar hoje
+select count(*) from conta where tipo = '1' and data_pagamento is null 
+    and data_vencimento = current_date;
+-- Contas a receber entre datas
+select * from conta where tipo = '2' and data_pagamento is null 
+    and data_vencimento between '2020-05-01' and '2020-05-31';
+-- Contas pagas entre datas
+select * from conta where tipo = '1' and data_pagamento is not null 
+    and data_pagamento between '2020-05-01' and '2020-05-31';
+
+-- Listar todas as contas a pagar
+select * from conta where tipo = '1' and data_pagamento is null;
+
+--listar contas a pagar vencidas
+select * from conta where tipo = '1' and data_pagamento is null 
+    and data_vencimento < current_date and data_pagamento is null;

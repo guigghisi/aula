@@ -1,0 +1,34 @@
+drop table conta_as_pagar;
+drop table conta_as_receber;
+
+create table conta_as_pagar(
+    id serial primary key,
+    descricao text,
+    valor real,
+    data_vencimento date,
+    data_pagamento date,
+    observacao text
+);
+
+create table conta_as_receber(
+    id serial primary key,
+    descricao text,
+    valor real,
+    data_vencimento date,
+    data_pagamento date,
+    observacao text
+);
+
+insert into conta_as_pagar(descricao, valor, data_vencimento, data_pagamento, observacao) values('Conta de Luz', 100.00, '2017-01-01', '2017-01-01', 'Pagamento de luz');
+insert into conta_as_pagar(descricao, valor, data_vencimento, data_pagamento, observacao) values('Conta de Agua', 125.00, '2017-01-01', '2017-01-01', 'Pagamento de agua');
+insert into conta_as_pagar(descricao, valor, data_vencimento, data_pagamento, observacao) values('Conta de Internet', 100.00, '2017-01-01', '2017-01-01', 'Pagamento de internet');
+
+insert into conta_as_receber(descricao, valor, data_vencimento, data_pagamento, observacao) values('debito', 500.00, '2017-01-01', '2017-01-01', 'Pagamento de agua');
+insert into conta_as_receber(descricao, valor, data_vencimento, data_pagamento, observacao) values('Cheque', 400.00, '2017-01-01', '2017-01-01', 'Pagamento de luz');
+select * from conta_as_pagar;
+
+select * from conta_as_receber;
+
+select * from conta_as_pagar where data_pagamento = '2017-01-01';
+
+

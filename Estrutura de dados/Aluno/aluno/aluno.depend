@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1652379732 source:c:\users\guilh\documents\ifsc\estrutura de dados\aluno\aluno\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../lib_aluno/lib_aluno.h"
+
+1652380252 c:\users\guilh\documents\ifsc\estrutura de dados\aluno\lib_aluno\lib_aluno.h
+	<stdio.h>
+	<stdlib.h>
+

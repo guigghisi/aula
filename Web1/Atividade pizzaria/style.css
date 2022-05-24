@@ -1,0 +1,53 @@
+header{
+  background-color: brown;
+}
+.div2{
+ background-color: darkgoldenrod;
+  display: table-cell;
+  text-align: justify;
+  width: 80%;
+  height: 100px;
+}
+.div3{
+  background-color: brown;
+   display: table-cell;
+   width: 20%;
+   height: 100px;
+ }
+ p{
+   text-align: center;
+   
+ }
+.rodape{
+  background-image: url(img/bg.jpg);
+  text-align: center;
+}
+.div4{
+  background-color: brown;
+  text-align: center;
+  position: absolute;
+  left: 250px;
+  top: 50px;
+}
+.divp{
+  border-radius: 5%;
+  border: 1px solid black;
+  text-align: center;
+  width: 30%;
+  height: 300px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.div6{
+  background-color: darkgoldenrod;
+  text-align: center;
+   width: 100%;
+   height: 100%;
+ }
+
+ button:hover {
+  transform: scale(1.1);
+ }
+#teste{position:relative}
+#teste:hover{top:-2px;box-shadow:0 2px 2px #666}
