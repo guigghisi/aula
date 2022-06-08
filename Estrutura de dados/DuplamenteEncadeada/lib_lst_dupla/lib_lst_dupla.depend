@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1654731132 source:c:\users\guilh\documents\ifsc\estrutura de dados\duplamenteencadeada\lib_lst_dupla\main.c
+	<stdio.h>
+	<stdlib.h>
+

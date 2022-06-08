@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1654129085 source:c:\users\guilh\documents\ifsc\estrutura de dados\aula_01_06\lib_pilha\main.c
+	"lib_pilha.h"
+
+1654129085 c:\users\guilh\documents\ifsc\estrutura de dados\aula_01_06\lib_pilha\lib_pilha.h
+	<stdlib.h>
+	<stdio.h>
+
